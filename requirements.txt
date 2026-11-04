@@ -1,0 +1,10 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+httpx==0.25.1
+websockets==12.0
+aiofiles>=23.2.1
+httpx[http2]
+cryptography>=41.0.0
+
+psutil>=5.9.8
+python-socks[asyncio]>=2.4.3

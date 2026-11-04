@@ -1,0 +1,38 @@
+{
+  "starter": {
+    "id": "starter",
+    "name": "Starter",
+    "days": 30,
+    "volume_gb": 50,
+    "speed_mbps": 30,
+    "ip_limit": 1,
+    "stars": 99,
+    "badge": "شروع حرفه‌ای",
+    "featured": false,
+    "order": 1
+  },
+  "pro": {
+    "id": "pro",
+    "name": "Pro",
+    "days": 90,
+    "volume_gb": 200,
+    "speed_mbps": 80,
+    "ip_limit": 2,
+    "stars": 249,
+    "badge": "پیشنهاد ویژه",
+    "featured": true,
+    "order": 2
+  },
+  "ultra": {
+    "id": "ultra",
+    "name": "Ultra",
+    "days": 180,
+    "volume_gb": 500,
+    "speed_mbps": 150,
+    "ip_limit": 3,
+    "stars": 499,
+    "badge": "بیشترین ارزش",
+    "featured": false,
+    "order": 3
+  }
+}

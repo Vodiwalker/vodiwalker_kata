@@ -1,0 +1,34 @@
+name: Katabump Auto Renew
+
+on:
+  schedule:
+    # اجرای خودکار هر ۳ روز یک‌بار
+    - cron: '0 12 */3 * *'
+  workflow_dispatch: # امکان اجرای دستی برای تست فوری
+
+jobs:
+  renew-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: دریافت کدها
+        uses: actions/checkout@v4
+
+      - name: نصب پایتون
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: نصب ابزارها و مرورگر
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install chromium
+          playwright install-deps
+
+      - name: اجرای اسکریپت تمدید
+        env:
+          KATABUMP_EMAIL: ${{ secrets.KATABUMP_EMAIL }}
+          KATABUMP_PASSWORD: ${{ secrets.KATABUMP_PASSWORD }}
+          SERVER_ID: ${{ secrets.SERVER_ID }}
+        run: python renew.py
